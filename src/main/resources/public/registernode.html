@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Jumbotron Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="jumbotron.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="container">
+    <h2>Please Register Your Node</h2>
+    <form action="api/register" enctype="text/plain" method="post">
+        <div class="form-group">
+            <label for="nodegroup">Node Group:</label>
+            <input type="text" class="form-control" id="nodegroup" name="nodegroup" placeholder="Enter Node Group">
+        </div>
+        <div class="form-group">
+            <label for="nodename">Node Name:</label>
+            <input type="text" class="form-control" id="nodename" name="nodename" placeholder="Enter Node Name">
+        </div>
+        <div class="form-group">
+            <label for="superip">Superpeer IP:</label>
+            <input type="text" class="form-control" id="superip" name="superip" placeholder="Enter SP IP (this is SP IP to register with for SPs)">
+        </div>
+        <div class="form-group">
+            <label for="superport">Superpeer Port:</label>
+            <input type="text" class="form-control" id="superport" name="superport" placeholder="Enter SP Port (this is SP port to register with for SPs)">
+        </div>
+        <div class="checkbox">
+            <label><input type="checkbox" name="isroot"> This Is A Superpeer</label>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</div>
+
+<script src="static/js/jquery-3.2.1.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+
+</body>
+</html>
