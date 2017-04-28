@@ -79,7 +79,7 @@ public class Application {
         post("api/newnode", (request, response) -> {
             ObjectMapper mapper = new ObjectMapper();
             Peer peer = mapper.readValue(request.body(), Peer.class);
-            dao.insertPeer(peer.getName(), peer.getIp(), peer.getPort());
+            dao.insertNewPeer(peer.getName(), peer.getIp(), peer.getPort());
             response.status(200);
             return "";
         });

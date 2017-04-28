@@ -72,6 +72,29 @@ public class LocationDAOSQLLite implements LocationDAO {
         }
     }
 
+    public void insertNewPeer(String name, String ip, int port) {
+        String delSql = "DELETE FROM peers WHERE name = ?";
+        String sql = "INSERT INTO peers(name, ip, port, root) VALUES(?,?,?,0)";
+
+        try (Connection conn = this.connect("peers");
+             PreparedStatement pstmt = conn.prepareStatement(delSql)) {
+            pstmt.setString(1, name);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Unable to delete" + name + " from peer db.", e);
+        }
+
+        try (Connection conn = this.connect("peers");
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, name);
+            pstmt.setString(2, ip);
+            pstmt.setInt(3, port);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Unable to insert" + name + " into peer db.", e);
+        }
+    }
+
     public void insertNewSuper(String name, String ip, int port) {
         String delSql = "DELETE FROM peers WHERE root = 1";
         String sql = "INSERT INTO peers(name, ip, port, root) VALUES(?,?,?,1)";

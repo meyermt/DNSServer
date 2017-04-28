@@ -16,6 +16,7 @@ public interface LocationDAO {
     void updatePeer(String name, String ip, int port, boolean isRoot);
     int getSuperCount();
     Peer getLocalSuperpeer();
+    void insertNewPeer(String name, String ip, int port);
     void insertNewSuper(String name, String ip, int port);
 
     Superpeer getSuperpeer(String region);

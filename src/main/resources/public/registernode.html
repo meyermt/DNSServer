@@ -18,7 +18,14 @@
 
 <body>
 <div class="container">
-    <h2>Please Register Your Node</h2>
+    <h2>Register Your Node</h2>
+    <h3>Instructions: PLEASE READ</h3>
+    <p>Currently, you must follow these steps for registering a node:</p>
+    <p>1. Register superpeers first. Superpeers will register themselves first, and then other superpeers.</p>
+    <p>1a. A superpeer registering itself only needs to fill in node group (region), node name, and check the superpeer box.</p>
+    <p>1b. For each superpeer in the network, register their node group, name, ip, port, and check the superpeer box.</p>
+    <p>2. Register nodes in node group network. Visit this page from each node and register all information, but do not check superpeer.</p>
+    <p>3. Go back to the index, navigate to send a message to a peer in any connected network!</p>
     <form action="api/register" enctype="text/plain" method="post">
         <div class="form-group">
             <label for="nodegroup">Node Group:</label>
